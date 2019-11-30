@@ -23,8 +23,8 @@ class App extends Component {
     this.state = {
 
       // backend
-      // host: 'http://localhost:8080',
-      host: 'https://twittrsittr.herokuapp.com',
+      host: 'http://localhost:8080',
+      // host: 'https://twittrsittr.herokuapp.com',
 
       // show or hide dashboard
       dashboardStatus: 'hide',
