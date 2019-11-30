@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+/*
+    Home
+*/
+
+@import "settings";
+
+.home {
+    padding: size(24) size(4) size(4);
+
+    @include bp(break-md) {
+        padding: 0;
+    }
+}

@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+/*
+    Dashboard
+*/
+
+@import "settings";
+
+
+// Dashboard wrapper
+// spacing, showing and hiding
+.dashboard {
+    position: relative;
+    padding: size(24) size(4) size(4);
+
+    @include bp(break-md) {
+        padding: 0;
+    }
+}
+
+.dashboard.hide {
+    position: absolute;
+    left: -200%;
+}
+.dashboard.show {
+    position: relative;
+    left: auto;
+}
+
+// Dashboard footer
+// nothing
+footer {
+    padding: size(2);
+}
+
+// Charts
+article.charts {
+    flex-grow: 1;
+}
+
+// Data line items
+aside.data {
+    position: relative;
+    width: 100%;
+    background-color: none;
+    padding: size(3) 0;
+    // border-radius: size(1);
+
+    @include bp(break-md) {
+        position: absolute;
+        z-index: $zHigh;
+        top: (size(2) + 63px);
+        right: size(2);
+        bottom: size(2);
+        border-left: 1px solid rgba(255,255,255,0.75);
+        width: 280px;
+        padding: size(2) size(3);
+    }
+
+    @include bp(break-xl) {
+        width: 320px;
+    }
+
+    .data__item {
+        display: flex;
+        padding: size(2) 0;
+        border-bottom: 1px solid rgba(255,255,255,0.5);
+        align-items: center;
+
+        figure.data__item__icon {
+            width: 1.1rem;
+            font-size: 1.1rem;
+            color: $color__white;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+        }
+
+        h3, p {
+            flex-grow: 1;
+            font-family: $sans;
+            font-weight: 300;
+            color: $color__white;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+        }
+
+        h3 {
+            text-align: left;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            padding: 0 0 0 size(1);
+        }
+
+        p {
+            text-align: right;
+            font-size: 1.5rem;
+            font-weight: 500;
+            @include bp(break-xl) {
+                font-size: 1.6rem;
+            }
+        }
+
+    }
+
+}
+
+.charts {
+    position: relative;
+
+    .chart__card {
+        position: relative;
+        width: 100%;
+        border: 1px solid #e1e1e1;
+        padding: size(8) size(2) size(2);
+        margin-top: size(2);
+        background-color: $color__white;
+
+        @include bp(break-md) {
+            margin-top: size(4);
+            padding: size(10) size(4) size(4);
+        }
+
+        > h3 {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            font: 300 1rem/100% $sans;
+            color: $color__black;
+            border-bottom: 1px solid #e1e1e1;
+            padding: size(2);
+        }
+    }
+
+    .line-chart {
+        // padding: size(2) 0 0 0;
+    }
+
+}

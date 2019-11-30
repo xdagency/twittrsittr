@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/*
+    Modals
+*/
+
+@import "settings";
+
+.blade {
+    position: fixed;
+    overflow-y: scroll;
+    z-index: $zHighest;
+    top: 0; right: 0; bottom: 0;
+    width: 100%;
+    background: $color__white;
+    padding: size(3);
+    box-shadow: 0px -8px 16px -8px rgba(0,0,0,0.22);
+    transition: all 0.23s ease-in-out;
+
+    @include bp(break-sm) {
+        padding: size(4);
+    }
+
+    @include bp(break-md) {
+        width: 700px;
+    }
+
+    &.hide {
+        transform: translateX(100%);
+    }
+
+    &.show {
+        transform: translateX(0);
+    }
+
+
+    .blade__header {
+        border-bottom: 1px solid #ddd;
+        padding: 0 0 size(2);
+    
+        button.close {
+            float: right;
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+}

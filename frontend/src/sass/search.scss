@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/*
+    Search
+*/
+
+@import "settings";
+
+.search {
+    position: fixed;
+    top: 0; left: 0;
+    display: flex;
+    align-items: center;
+    z-index: $zHigher;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    border-bottom: 1px solid rgba(255,255,255,0.75);
+    transition: all 0.5s ease-in-out;
+    
+    form {
+        margin: 0;
+        padding: size(0) size(2);
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        > input {
+            background: none;
+            font-size: 1.33rem;
+            color: $color__black;
+            @include bp(break-md) {
+                font-size: 1.66rem;
+            }
+        }
+    }
+
+    span.at {
+        font-size: 1.33rem;
+        font-weight: normal;
+        line-height: 100%;
+        font-family: 'Helvetica', 'Arial', sans-serif;
+
+        color: $color__black;
+        padding: 0 0 0 size(0.5);
+        vertical-align: top;
+        @include bp(break-md) {
+            font-size: 1.66rem;
+        }
+    }
+}

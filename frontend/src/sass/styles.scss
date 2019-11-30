@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+/*
+    Styles
+*/
+
+@import "settings";
+
+body {
+    background-color: $color__black;
+    // background-color: $color__white;
+}
+
+.app {
+    background-size: cover;
+}
+
+.intro {
+    position: relative;
+    max-width: 720px;
+    width: 96%;
+    // background: purple;
+
+    @include bp(break-md) {
+        position: absolute;
+        bottom: size(9);
+        left: size(9);
+    }
+
+    @include bp(break-lg) {
+        bottom: size(11);
+        left: size(11);
+    }
+}
+
+
+
+/* 
+    Typography 
+*/
+
+h1 {
+    font: 300 3rem/100% $sans;
+    span {
+        display: inline-block;
+        padding: 3px;
+        background-color: $color__lemon;
+        // padding: 3px 5px 1px;
+    }
+}
+
+h2 {
+    display: inline-block;
+    background: $color__white;
+    color: $color__black;
+    font: 300 1.5rem/120% $sans;
+    padding: size(1);
+    vertical-align: middle;
+
+    @include bp(break-md) {
+        font-size: 1.75rem;
+    }
+
+    @include bp(break-lg) {
+        font-size: 1.9rem;
+    }
+
+    @include bp(break-xl) {
+        font-size: 2.25rem;
+    }
+
+    span {
+        display: inline-block;
+        padding: 3px;
+        background-color: $color__lemon;
+        // padding: 3px 5px 1px;
+    }
+
+    strong {
+        font-weight: 500;
+    }
+}
+
+h3 {
+}
+
+h4 {
+    font: 500 2.5rem/120% $sans;
+    padding: 0 0 0 size(1);
+
+    @include bp(break-xl) {
+        font-size: 2.75rem;
+    }
+}
+
+h5 {
+    display: inline-block;
+    background-color: $color__white;
+    color: $color__black;
+    font: 300 0.9rem/144% $sans;
+    text-transform: uppercase;
+    padding: size(1);
+}
+
+p {
+    font: 300 1rem/144% $sans;
+    color: $color__black;
+
+    &.center {
+        text-align: center;
+    }
+
+    @include bp(break-xl) {
+        font-size: 1.15rem;
+    }
+}

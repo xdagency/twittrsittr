@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+/*
+    Buttons
+*/
+
+@import "settings";
+
+.btn {
+    display: inline-block;
+    font: normal 1rem/100% $sans;
+    background-color: $color__white;
+    border-radius: size(0.75);
+    padding: size(1) size(2);
+    border: 1px solid rgba(0,0,0,0.25);
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.btn--submit {
+    }
+
+    &.btn--small {
+        font-size: 0.75rem;
+        padding: size(0.8) size(1.5);
+    }
+
+    &.btn--text {
+        background: none;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        font: 300 0.9rem/100% $sans;
+        text-decoration: underline;
+    }
+}
+
+.btn__group {
+    position: relative;
+    padding: size(3) 0;
+}

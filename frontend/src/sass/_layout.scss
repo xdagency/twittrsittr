@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+/*
+    Layout
+*/
+
+// Wrapper
+// the app wrapper element
+.wrapper {
+    // max-width: $page--maxwidth;
+    position: relative;
+    margin: 0 auto;
+    min-height: 100%; min-height: 100vh;
+    min-width: 100%; min-width: 100vw;
+    // background: green;
+}
+
+// Screen
+// a page that has a route. Generic styles for layout
+.screen {
+    position: relative;
+    // padding: size(20) size(6) size(6);
+    // background: yellow;
+    @include bp(break-md) {
+        // adding padding to offset the absolute header component
+        padding-top: 100vh;
+    }
+}
+
+// Screen Headers
+// Status emoji and summary
+header.screen__header {
+    position: relative;
+    // background: tomato;
+
+    @include bp(break-md) {
+        position: absolute;
+        z-index: $zNeutral;
+        top: 0; left: 0; right: 0;
+        min-height: 100%; min-height: 100vh;
+    }
+}
+
+header.background__header {
+    position: fixed;
+    z-index: $zLowest;
+    background-position: center center;
+    top: 0; left: 0; right: 0;
+    min-height: 100%; min-height: 100vh;
+    min-width: 100%; min-width: 100vw;
+}
+
+article.screen__body {
+    position: relative;
+    width: calc(100vw - 296px);
+    margin: 0;
+
+    // background-color: $color__white;
+    // background-color: rgba(255,255,255,0.33);
+    // box-shadow: 0px 8px 24px -6px rgba(0,0,0,0.1);
+
+    @include bp(break-md) {
+        padding: size(4) size(6);
+    }
+
+    @include bp(break-lg) {
+        padding: size(4) size(11);
+    }
+}

@@ -1,0 +1,101 @@
+/*
+    Settings
+*/
+
+// $ COLOURS
+
+$color__dusk: #000272; // rgb(0, 2, 114)
+$color__plum: #341677; // rgb(52, 22, 119)
+$color__wine: #a32f80;
+$color__orange: #ff6363;
+$color__lemon: #ffbd39;
+$color__ocean: #6fc2d0; // rgb(111, 194, 208)
+$color__rose: #ffcbcb;
+$color__ice: #ecf4f3; // rgb(236, 244, 243)
+$color__blush: #fae3d9; // rgb(250, 227, 217)
+
+$color__black: #010201;
+$color__white: #fefffe;
+
+/*
+Doughnut: Lightening/Carnation
+Retweets/Favourites: Steel Blue/Sunglo
+*/
+
+
+// $ Z-INDEXES
+
+$zHighest: 9999;
+$zHigher: 999;
+$zHigh: 99;
+$zNeutral: 10;
+$zLow: 5;
+$zLowest: 0;
+
+
+// $ SIZES
+
+@function size($multiplier: 1) {
+    $base: 8px;
+    @return $base * $multiplier;
+}
+
+$gutter: size(2); // 16
+$page--maxwidth: size(140); // 1120
+
+
+// $ TYPOGRAPHY
+
+$serif: 'Times', Georgia, serif;
+$sans: 'Heebo', Helvetica, sans-serif;
+$mono: monospace;
+
+
+* {
+    box-sizing: border-box;
+}
+
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// @ MEDIA QUERIES
+
+$breakpoints: (
+    break-sm: 480px,
+    break-md: 748px,
+    break-lg: 980px,
+    break-xl: 1140px
+);
+
+@mixin bp($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media screen and (min-width: #{map-get($breakpoints, $breakpoint)}) {
+            @content;    
+        }
+    }
+    @else {
+         @warn "Unfortunately, no value could be retrieved from breakpoint map.";
+    }
+}
+
+@mixin bpany($width, $height: null) {
+    @if ($height) {
+        @media screen and (min-width: $width) and (min-height: $height) {
+            @content;
+        }
+    } @else {
+        @media screen and (min-width: $width) {
+            @content;
+        }
+    }
+}
+
+
+// @ IMPORTS
+
+@import "reset";
+@import "layout";
